@@ -12,11 +12,7 @@ namespace Tralala
 	public:
 		
 		static ConsoleManager* GetSingleton();
-
-		void VPrint(const char* fmt, va_list args);
 	};
-
-	void Console_Print(const char* fmt, ...);
 
 	// 0C
 	struct ObScriptParam
