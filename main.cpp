@@ -1,4 +1,5 @@
 #include "skse64/PluginAPI.h"
+#include "skse64_common/skse_version.h"
 #include "skse64_common/BranchTrampoline.h"
 #include <shlobj.h>
 
@@ -39,8 +40,6 @@ extern "C"
 	bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
 	{
 
-		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\SimpleLockOn.log");
-
 		info->infoVersion = PluginInfo::kInfoVersion;
 		info->name = "SimpleLockOn plugin";
 		info->version = 2;
@@ -70,6 +69,9 @@ extern "C"
 
 	bool SKSEPlugin_Load(const SKSEInterface * skse)
 	{
+
+		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\SimpleLockOn.log");
+
 		_MESSAGE("Load");
 
 		Settings::Load();
