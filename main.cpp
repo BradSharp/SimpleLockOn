@@ -24,6 +24,18 @@ void * g_moduleHandle = nullptr;
 extern "C"
 {
 
+	SKSEPluginVersionData SKSEPlugin_Version =
+	{
+		SKSEPluginVersionData::kVersion,
+		1,
+		"Simple Lock On AE",
+		"Sharpify",
+		"support@example.com",
+		SKSEPluginVersionData::kVersionIndependent_Signatures,
+		{ RUNTIME_VERSION_1_6_353, 0 },	// compatible with 1.6.353
+		0,
+	};
+
 	bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
 	{
 
