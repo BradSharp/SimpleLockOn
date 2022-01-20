@@ -16,6 +16,7 @@
 #include "Controls.h"
 #include "ScaleformUtil.h"
 #include "Event.h"
+#include "AddressRegistry.h"
 
 IDebugLog				gLog;
 PluginHandle			g_pluginHandle = kPluginHandle_Invalid;
@@ -75,6 +76,7 @@ extern "C"
 		_MESSAGE("Load");
 
 		Settings::Load();
+		AddressRegistry::Initialize();
 
 		Tralala::PlayerCameraGetAddress();
 		Tralala::ConsoleGetAddresses();
