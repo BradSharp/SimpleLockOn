@@ -1,5 +1,7 @@
 #include "Camera.h"
 #include "skse64/NiNodes.h"
+#include "skse64/NiTypes.h"
+#include "skse64/GameCamera.h"
 
 namespace Tralala
 {
@@ -7,8 +9,7 @@ namespace Tralala
 
 	void PlayerCameraGetAddress()
 	{
-		const std::array<BYTE, 9> pattern = { 0x8B, 0x4D, 0xC7, 0x0F, 0xB6, 0xC9, 0x83, 0xF8, 0x04 };
-		g_playerCameraAddr = (uintptr_t)scan_memory_data(pattern, 0x21, true, 0x3, 0x7);
+		g_playerCameraAddr = (uintptr_t)PlayerCamera::GetSingleton();
 	}
 
 	float ThirdPersonState::GetDistanceWithinTargetHead(Tralala::Actor * target)
